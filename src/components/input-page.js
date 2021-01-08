@@ -82,7 +82,7 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="Title of entry"
                             />
-                            {/* {console.log(this.state.title)} */}
+                            {console.log(this.state.title)}
                         </div>
 
                         <div className="input-wrapper">
@@ -94,6 +94,7 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="Location"
                             />
+                            {console.log(this.state.location)}
                         </div>
 
                         <div className="input-wrapper">
@@ -105,6 +106,7 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="Date"
                             />
+                            {console.log(this.state.date)}
                         </div>
 
                         <div className="input-wrapper">
@@ -118,6 +120,7 @@ export default class AddEntry extends Component {
                             />
                             <button>Add</button><br/>
                             People added: (List of people added) 
+                            {console.log(this.state.person)}
                             
                         </div>
                                                 
@@ -129,6 +132,7 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="Description or story"
                             />
+                            {console.log(this.state.description)}
                         </div>                      
                         
                         
