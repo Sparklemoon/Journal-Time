@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 export default function homepage(props) {
     return (
         <div className='homepage-wrapper'>
-            Homepage
+            <h1>Homepage</h1>
             <Link className="nav-link" to="/add-entry">
                 Add Entry
             </Link>

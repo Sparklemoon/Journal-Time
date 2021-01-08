@@ -92,7 +92,7 @@ export default class AddEntry extends Component {
                         </div>
 
                         <div className="input-wrapper">
-                            People:
+                            Add a person:
                             <input
                                 type="text"
                                 name="people"
@@ -100,6 +100,9 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="People to remember"
                             />
+                            <button>Add</button><br/>
+                            People added: (List of people added) 
+                            
                         </div>
                                                 
                         <div className="textarea-wrapper">
@@ -113,7 +116,7 @@ export default class AddEntry extends Component {
                         </div>                      
                         
                         
-                        <div className="add-client-button">
+                        <div className="add-entry-button">
                             <button type="submit">
                                 Add Entry
                             </button>
