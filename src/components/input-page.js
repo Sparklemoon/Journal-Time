@@ -12,12 +12,13 @@ export default class AddEntry extends Component {
             title: "",
             location: "",
             description: "",
-            people: "",
+            person: "",
+            date: "",
             user: "",
             error: false
         }
         this.handleChange = this.handleChange.bind(this)
-        // this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     // componentDidMount() {
@@ -33,33 +34,36 @@ export default class AddEntry extends Component {
     }
 
 
-    // handleSubmit(event) {
-    //     event.preventDefault()
+    handleSubmit(event) {
+        event.preventDefault()
 
-        
-    //     fetch("", {
-    //         method: "POST",
-    //         body: JSON.stringify({
-    //             title: this.state.title,
-    //             location: this.state.location,
-    //             people: this.state.people,
-    //             description: this.state.description,
-    //         })
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         if (data == "Entry added successfully") {
-    //             this.props.history.push("/")
-    //         }                           
-    //         else {
-    //             this.setState({ error: true })
-    //         }
-    //     })
-    //     .catch(error => {
-    //         console.log("Error creating client: ", error)
-    //         this.setState({ error: true })
-    //     })   
-    // }
+        fetch("https://journal-time-api-octclass.herokuapp.com/journal/add", {
+            method: "POST",
+            headers: { "content-type":"application/json"},
+            body: JSON.stringify({
+                person: this.state.person,
+                title: this.state.title,
+                description: this.state.description,
+                date: this.state.date,
+                location: this.state.location
+                
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data == "Data added successfully") {
+                // this.props.history.push("/")
+            }                           
+            else {
+                this.setState({ error: true })
+            }
+            console.log(data)
+        })
+        .catch(error => {
+            console.log("Error creating entry: ", error)
+            this.setState({ error: true })
+        })   
+    }
     
     render() {
         
@@ -78,6 +82,7 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="Title of entry"
                             />
+                            {/* {console.log(this.state.title)} */}
                         </div>
 
                         <div className="input-wrapper">
@@ -92,11 +97,22 @@ export default class AddEntry extends Component {
                         </div>
 
                         <div className="input-wrapper">
+                            Date:
+                            <input
+                                type="text"
+                                name="date"
+                                value={this.state.date}
+                                onChange={this.handleChange}
+                                placeholder="Date"
+                            />
+                        </div>
+
+                        <div className="input-wrapper">
                             Add a person:
                             <input
                                 type="text"
-                                name="people"
-                                value={this.state.people}
+                                name="person"
+                                value={this.state.person}
                                 onChange={this.handleChange}
                                 placeholder="People to remember"
                             />
