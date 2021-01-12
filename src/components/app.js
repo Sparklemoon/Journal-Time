@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import Home from "./homepage"
 import AddEntry from "./input-page"
 import ViewEntry from "./view-journal-entry"
+import CreateAccount from "./create-account"
 
 
 export default class App extends Component {
@@ -15,7 +16,7 @@ export default class App extends Component {
     return (
       <div className='app'>
 
-//        <ViewPage/>
+
 
         <BrowserRouter>
           <div className="wrapper">
@@ -23,6 +24,7 @@ export default class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/add-entry" component={AddEntry} />
               <Route path="/view-entries" component={ViewEntry} />
+              <Route path="/create-account" component={CreateAccount}/>
             </Switch>
           </div>
         </BrowserRouter>

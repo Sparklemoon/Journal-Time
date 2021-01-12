@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-// import Navbar from "../navigation/loggedIn"
+import Navbar from "./navbar"
 import Cookies from "js-cookie"
-// import Footer from "../navigation/footer"
+
 
 export default class AddEntry extends Component {
     constructor() {
@@ -70,7 +70,7 @@ export default class AddEntry extends Component {
         return (
             <div className="body-wrapper">
                 <div className="form-wrapper">
-                    {/* <Navbar/> */}
+                    <Navbar/>
                     <form onSubmit={this.handleSubmit}>
                         <h1>Add Entry</h1>
                         <div className="input-wrapper">
