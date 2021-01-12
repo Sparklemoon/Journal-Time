@@ -5,20 +5,23 @@ import Cookies from "js-cookie"
 
 
 export default class AddEntry extends Component {
-    constructor() {
-        super ()
+    constructor(props) {
+        super (props)
 
         this.state = {
             title: "",
             location: "",
             description: "",
             person: "",
+            people: [],
             date: "",
             user: "",
             error: false
         }
+        
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.addPerson = this.addPerson.bind(this)
     }
 
     // componentDidMount() {
@@ -31,6 +34,16 @@ export default class AddEntry extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
+
+    addPerson(){
+        this.setState(state => {
+            const people = [...state.people, state.person]
+            return {
+                people,
+                person: ""
+        }
+    })
     }
 
 
@@ -118,8 +131,14 @@ export default class AddEntry extends Component {
                                 onChange={this.handleChange}
                                 placeholder="People to remember"
                             />
-                            <button>Add</button><br/>
-                            People added: (List of people added) 
+                            <button 
+                                onclick={this.addPerson}
+                                type="button"
+                                // disabled={this.state.person}
+                            >
+                            add 
+                            </button><br/>
+                            People added: {this.state.people}
                             {console.log(this.state.person)}
                             
                         </div>
