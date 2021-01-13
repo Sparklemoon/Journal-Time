@@ -1,30 +1,14 @@
-.view-page-container {
-    border: solid black 1px;
-    // background-color: #101820FF;
-    // color: #006B38FF;
-    // background-color: #2C5F2DFF;
-    // color: #FFE77AFF;
-    // background-color: #00539CFF;
-    // color: #FFD662FF;
-    background-color: #755139FF;
-    margin-top: 1vh;
-    height: 98vh;
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Row {
-    background-color: #F2EDD7FF;
-    border: solid black 1px;
-    height: 7vh;
+.entry-wrapper {
+    font-size: 18px;
+    height: 300px;
+    width: 80vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 5vh;
-}
-
-
-.Col {
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
